@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>商品详情</title>
+    <link rel="stylesheet" href="css/productdetail.css" />
+    <link rel="stylesheet" href="css/swiper.css" />
+  </head>
+  <body>
+    <div class="top">
+      <div class="warp cl">
+        <span class="top-link">
+          您好，欢迎来到 <em class="s-name">中酒网！</em>
+          <a href="">去首页</a>
+        </span>
+        <ul class="login-regin">
+          <li class="L-line"><a href="login.html">请登录</a></li>
+          <li><a href="Register.html">免费注册</a></li>
+        </ul>
+
+        <ul class="quick_list">
+          <li class="sitemap dropdown">
+            <a href="">我的中酒网<span class="iconfont">&#xe65c;</span></a>
+
+            <div class="dropdown-menu">
+              <ol>
+                <li><a href="">已买到的商品</a></li>
+                <li><a href="">我关注的商品</a></li>
+                <li><a href="">我关注的店铺</a></li>
+              </ol>
+            </div>
+          </li>
+          <li>
+            <em class="shopping-cart"></em
+            ><a target="_blank" href=""
+              >购物车<em><span id="shopping-amount">0</span></em
+              >件</a
+            >
+          </li>
+          <li class="moblie-qrcode dropdown">
+            <a href="">微信端</a>
+            <div class="dropdown-menu">
+              <img
+                src="https://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/Site/qrCode.png"
+                width="90"
+                height="90"
+              />
+              <h3>扫描二维码</h3>
+              <p>在微信端查看</p>
+            </div>
+          </li>
+          <li class="app-qrcode dropdown">
+            <a href="">APP</a>
+            <div class="dropdown-menu">
+              <img
+                width="90"
+                height="90"
+                src="http://img6.zhongjiu.cn/ResourceB2B2C/App/mob.jpg"
+              />
+              <h3>扫描二维码</h3>
+              <p>下载手机客户端</p>
+            </div>
+          </li>
+          <li class="service">
+            <a href="/selleradmin">卖家中心</a>
+          </li>
+
+          <li class="customservice dropdown">
+            <a href="">客户服务<span class="iconfont">&#xe65c;</span></a>
+
+            <div class="dropdown-menu">
+              <div>
+                <div class="item-business">商户</div>
+                <div class="item">
+                  <a href="">平台准则</a>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="service">
+            <a href="">订购热线：400-798-9999</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="header">
+      <div class="kongbai"></div>
+      <div class="logo">
+        <img
+          src="https://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/Site/logo.png"
+          alt="Himall"
+        />
+      </div>
+
+      <div class="header-left">
+        <img src="http://img5.zhongjiu.cn/pro/dt/gif.gif" />
+      </div>
+      <div class="header-sousuo">
+        <div id="sousuo-border">
+          <div class="sousuo-ul">
+            <ul>
+              <li>商品</li>
+              <li>店铺</li>
+            </ul>
+          </div>
+          <input class="text" type="text" placeholder="天佑德" />
+          <input class="dianji" type="button" / value="搜索">
+          <p>
+            <a href="">西风</a>
+            <a href="">青稞酒</a>
+            <a href="">洋酒</a>
+            <a href="">习酒</a>
+            <a href="">小糊涂仙</a>
+            <a href="">酒鬼酒</a>
+            <a href="">张裕</a>
+            <a href="">拉菲</a>
+            <a href="">董酒</a>
+            <a href="">华夏长城</a>
+          </p>
+        </div>
+      </div>
+      <div class="header-right">
+        <img
+          src="https://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/ImageAd/201802011650389711990.jpg"
+          width="160"
+          height="80"
+        />
+      </div>
+    </div>
+
+    <div id="right">
+      <span
+        class="tuichu"
+        style="
+          position: absolute;
+          top: 0;
+          display: block;
+          width: 40px;
+          text-align: center;
+        "
+        >退出登录</span
+      >
+      <ul>
+        <li class="tx"><span class="iconfont">&#xe659;</span></li>
+        <li class="denglu">
+          <span class="iconfont">&#xe63f;</span>
+          <p>购</p>
+          <p>物</p>
+          <p>车</p>
+          <span class="sl">0</span>
+        </li>
+        <li><span class="iconfont">&#xe657;</span></li>
+        <li><span class="iconfont">&#xe643;</span></li>
+        <li><span class="iconfont">&#xe64d;</span></li>
+      </ul>
+    </div>
+
+    <div id="swiper-up">
+      <div class="top">
+        <ul>
+          <li><span class="iconfont">&#xe655;</span> 全部商品分类</li>
+        </ul>
+        <span class="sy"><a href="index.html">首页</a> </span>
+      </div>
+      <div class="xq">
+        <div class="sp"></div>
+        <div class="jg">
+          <div class="pprice">
+            <!-- <h6>42°天佑德17版海拔2800红盒500ml</h6>
+            <p>单价：<span>199</span></p>
+            <p>库存：有货</p>
+            <p>服务由 <a href="">中酒自营</a> 从北京发货，并提供售后服务</p> -->
+          </div>
+
+          <div class="box">
+            <input class="jian btn" value="-" type="button" />
+            <span class="txt">0</span>
+            <input class="jia btn" value="+" type="button" />
+          </div>
+          <button class="Btn">
+            <span class="iconfont">&#xe640;</span>加入购物车
+          </button>
+        </div>
+      </div>
+    </div>
+    <script src="js/jquery.js"></script>
+    <script src="js/cookie.js"></script>
+    <script>
+      $(".jian").click(function () {
+        let a = $(".txt").text();
+        a--;
+        $(".txt").text(a);
+        if ($(".txt").text() <= 0) {
+          $(".txt").text(0);
+        }
+      });
+      $(".jia").click(function () {
+        let a = $(".txt").text();
+        a++;
+        $(".txt").text(a);
+      });
+      //取到当前账号的uid
+      let uid = getCookie("uid");
+      let tx = getCookie("tx");
+      console.log(uid);
+      console.log(tx);
+
+      //获取商品数据
+      let id = location.search.split("=")[1];
+      $.get("http://jx.xuzhixiang.top/ap/api/detail.php", { id: id }).then(
+        (res) => {
+          let arr = res.data;
+          console.log(arr);
+          let pimg = `<img src="${arr.pimg}" alt="" />`;
+          let pprice = `
+            <h6>${arr.pname}</h6>
+            <p>单价：<span>${arr.pprice}</span></p>
+            <p>库存：有货</p>
+            <p>服务由 <a href="index.html"}">中酒自营</a> 从北京发货，并提供售后服务</p>
+            `;
+          $(".sp").html(pimg);
+          $(".pprice").html(pprice);
+
+          //给用户购物车添加商品
+          $(".Btn").click(function () {
+            if ($(".txt").text() == 0) {
+              alert("不能添加0件商品");
+              return;
+            }
+            if (tx) {
+            } else {
+              alert("你还未登录，快去登录吧");
+            }
+
+            //给购物车添加数据
+            $.get("http://jx.xuzhixiang.top/ap/api/add-product.php", {
+              pimg: arr.pimg,
+              pname: arr.pname,
+              pprice: arr.pprice,
+              uid: uid,
+              pid: id,
+              pnum: $(".txt").text(),
+            }).then((res) => {
+              console.log(res);
+              console.log($(".txt").text());
+
+              //自动改变小红点
+              //查询购物车数据
+              $.get("http://jx.xuzhixiang.top/ap/api/cart-list.php", {
+                id: uid,
+              }).then((res) => {
+                console.log(res);
+                let str = 0;
+                for (let i in res.data) {
+                  str += Number(res.data[i].pnum);
+                }
+                $(".sl").html(str);
+                if (uid) {
+                } else {
+                  $(".sl").html(0);
+                }
+              });
+            });
+          });
+        }
+      );
+
+      //提示是否登录
+      $(".denglu").click(function () {
+        if (uid) {
+          location.href = "cart.html";
+        } else {
+          alert("你还未登录，快去登录吧");
+        }
+      });
+
+      if (tx) {
+        $(".tx").html(tx);
+      }
+
+      //退出登录
+
+      $(".tuichu").click(function () {
+        removeCookie("uid");
+        removeCookie("tx");
+        alert("你已退出登录");
+        window.location.reload();
+      });
+
+      // 显示小红点
+      //查询购物车数据
+      $.get("http://jx.xuzhixiang.top/ap/api/cart-list.php", {
+        id: uid,
+      }).then((res) => {
+        let str = 0;
+        for (let i in res.data) {
+          str += Number(res.data[i].pnum);
+        }
+        $(".sl").html(str);
+        if (uid) {
+        } else {
+          $(".sl").html(0);
+        }
+      });
+    </script>
+  </body>
+</html>

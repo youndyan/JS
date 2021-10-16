@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>购物车</title>
+    <link rel="stylesheet" href="css/cart.css" />
+  </head>
+  <body>
+    <div class="header">
+      <img src="img/loginLogo.png" alt="" />
+      <p><span class="iconfont">&#xe63f;</span> 购物车</p>
+      <p><a href="index.html">首页</a></p>
+    </div>
+
+    <div class="wupin">
+      <div class="box">
+        <span><input type="checkbox" class="Check" name="" id="" /> 商品</span>
+        <span>单价</span>
+        <span>总价</span>
+        <span>添加/减少</span>
+        <span>删除</span>
+      </div>
+      <ul>
+        <!-- <li>
+          <div>
+            <img src="img/1_220 (2).png" alt="" />
+            <p>42°天佑德17版海拔2800红盒500ml</p>
+          </div>
+          <div>1500</div>
+          <div>1500</div>
+          <div>
+            <input class="jian btn" value="-" type="button" />
+            <span class="txt">0</span>
+            <input class="jia btn" value="+" type="button" />
+          </div>
+          <div><input type="button" value="删除" /></div>
+        </li> -->
+      </ul>
+      <p class="P">总价<span class="ZJ">0</span></p>
+    </div>
+    <script src="js/jquery.js"></script>
+    <script src="js/cookie.js"></script>
+    <script>
+      //取到当前账号的uid
+      let uid = getCookie("uid");
+      console.log(uid);
+      function arr(d) {
+        let j = $(".check:checked").length;
+        let z = 0;
+        for (let i = 0; i < j; i++) {
+          z += Number(
+            $(".check:checked").eq(i).parent().siblings(".zj").text()
+          );
+        }
+        z = z - Number(d);
+        $(".ZJ").html(z);
+      }
+      function brr(d) {
+        let j = $(".check:checked").length;
+        let z = 0;
+        for (let i = 0; i < j; i++) {
+          z += Number(
+            $(".check:checked").eq(i).parent().siblings(".zj").text()
+          );
+        }
+        z = z + Number(d);
+        $(".ZJ").html(z);
+      }
+      //获取购物车商品数据
+      // function arr() {
+      $.get("http://jx.xuzhixiang.top/ap/api/cart-list.php", {
+        id: uid,
+      }).then((res) => {
+        console.log(res);
+        let obc = res.data;
+        let str = "";
+        let pid = obc.pid;
+        for (let itme in obc) {
+          str += `
+          <li class="list">
+          <div>
+             <input type="checkbox"  class="check" name="" id="">
+            <img src="${obc[itme].pimg}" alt="" />
+            <p>${obc[itme].pname}</p>
+          </div>
+          <div class="dj">${obc[itme].pprice}</div>
+          <div class="zj">${obc[itme].pprice * obc[itme].pnum}</div>
+          <div>
+            <input class="jian btn" id="${
+              obc[itme].pid
+            }" value="-" type="button" />
+            <span class="txt">${obc[itme].pnum}</span>
+            <input class="jia btn" id="${
+              obc[itme].pid
+            }" value="+" type="button" />
+          </div>
+          <div><input type="button" id="${
+            obc[itme].pid
+          }" class="Btn" value="删除" /></div>
+        </li>
+        `;
+        }
+
+        $("ul").html(str);
+
+        /*  let list = $(".list");
+          if (list) {
+          } else {
+            $("ul").html("快去添加商品吧");
+          } */
+
+        //复选框
+        $(".Check").click(function () {
+          if ($(".Check").prop("checked")) {
+            $(".check").prop("checked", true);
+            let a = 0;
+            for (
+              let i = 0;
+              i < $(".check").parent().siblings(".zj").length;
+              i++
+            ) {
+              a += Number($(".check").parent().siblings(".zj")[i].innerText);
+            }
+            console.log(a);
+            $(".ZJ").html(a);
+          } else {
+            $(".check").prop("checked", false);
+            $(".ZJ").html(0);
+          }
+        });
+
+        $(".check").click(function () {
+          let all = $(".check").length;
+          if ($(this).prop("checked")) {
+            let a = $(".check:checked").length;
+            arr(0);
+            if (all == a) {
+              $(".Check").prop("checked", true);
+            } else {
+              $(".Check").prop("checked", false);
+            }
+            //判断
+          } else {
+            $(".Check").prop("checked", false);
+            arr(0);
+            let a = $(".check:checked").length;
+          }
+        });
+
+        //删除
+        $(".Btn").click(function () {
+          $.get("http://jx.xuzhixiang.top/ap/api/cart-delete.php", {
+            uid: uid,
+            pid: this.id,
+          });
+
+          $(this).parent().parent().remove();
+          arr(0);
+
+          let all = $(".check").length;
+          let a = $(".check:checked").length;
+          if (all == a) {
+            $(".Check").prop("checked", true);
+          } else {
+            $(".Check").prop("checked", false);
+          }
+
+          let str = "";
+          if ($(".check:checked").length == 0) {
+            $(".Check").prop("checked", false);
+            str = `<h2>快去添加商品吧</h2>`;
+            $("ul").html(str);
+            $(".P").hide();
+          }
+        });
+
+        if ($("ul").children().length == 0) {
+          $("ul").html("<h2>快去添加商品吧</h2>");
+          $(".P").hide();
+        }
+
+        //增删按钮
+        $(".jian").click(function () {
+          let a = $(this).siblings(".txt").text();
+          let d = $(this).parent().siblings(".dj").text();
+          a--;
+          console.log(a);
+          let int = $(this).parent().siblings("div").children(".check");
+          if (int.prop("checked") == true) {
+            arr(d);
+          }
+          if (a < 1) {
+            alert("商品不能为零");
+            return;
+          }
+          $(this).siblings(".txt").text(a);
+          let dj = $(this).parent().siblings(".dj").text();
+          $(this)
+            .parent()
+            .siblings(".zj")
+            .html(dj * a);
+          $.get("http://jx.xuzhixiang.top/ap/api/cart-update-num.php", {
+            uid: uid,
+            pid: this.id,
+            pnum: a,
+          });
+        });
+
+        $(".jia").click(function () {
+          let a = $(this).siblings(".txt").text();
+          let d = $(this).parent().siblings(".dj").text();
+          a++;
+          console.log(a);
+          let int = $(this).parent().siblings("div").children(".check");
+          if (int.prop("checked") == true) {
+            brr(d);
+          }
+
+          $(this).siblings(".txt").text(a);
+          let dj = $(this).parent().siblings(".dj").text();
+
+          $(this)
+            .parent()
+            .siblings(".zj")
+            .html(dj * a);
+          $.get("http://jx.xuzhixiang.top/ap/api/cart-update-num.php", {
+            uid: uid,
+            pid: this.id,
+            pnum: a,
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

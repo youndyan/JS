@@ -1,0 +1,117 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+@font-face {
+  font-family: 'iconfont';
+  src: url('../font/iconfont.woff2?t=1622252123915') format('woff2'),
+  url('../font/iconfont.woff?t=1622252123915') format('woff'),
+  url('../font/iconfont.ttf?t=1622252123915') format('truetype');
+}
+.header{
+  height: 80px;
+  background-color: rgb(242, 242, 242);
+  img{
+    float: left;
+    margin-top: 20px;
+    margin-left: 150px;
+    width: 300px;
+  }
+  p{
+    font-size: 16px;
+    float: left;
+    line-height: 80px;
+  }
+}
+
+.center{
+  width: 100%;
+  height: 500px;
+  background-color: rgb(227, 57, 56);
+  overflow: hidden;
+  .logo{
+    float: left;
+    margin-top:60px;
+    margin-left: 160px;
+  }
+  .box{
+    width: 350px;
+    height: 460px;
+    background-color: white;
+    float: left;
+    position: absolute;
+    left: 500px;
+    margin-top: 20px;
+    margin-left: 200px;
+    .dl{
+      display: block;
+      font-weight: 800;
+      width: 350px;
+      height: 50px;
+      font-size:20px;
+      line-height: 50px;
+      border-bottom: 1px solid rgb(211, 208, 208);
+      color: rgb(229,75,84);
+      text-align: center;
+    }
+    .box-center{
+      margin-top: 80px;
+     
+      div{
+        margin-left:auto ;
+      margin-right: auto;
+        border:1px solid rgb(216, 212, 212);
+        width: 250px;
+        height: 33px;
+        margin-top: 20px;
+        .iconfont{
+          font-family: "iconfont" !important;
+          font-size: 16px;
+          font-style: normal;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+         display: inline-block;
+         width: 33px;
+         height: 33px;
+         background-color: rgb(211, 208, 208);
+         line-height: 30px;
+         text-align: center;
+        }
+        input{
+          width: 200px;
+          height: 30px;
+          outline:medium;
+          border: none;
+          margin-left: 10px;
+        }
+      }
+      button{
+        width: 250px;
+        height: 40px;
+        background-color: rgb(227, 57, 56);
+        border: none;
+        outline:medium;
+        border-radius: 5px;
+        text-align: center;
+        margin-top: 40px;
+        margin-left: 50px;
+        color: white;
+        font-size: 16px;
+      }
+      p{
+        width: 100%;
+        font-size:14px ;
+        margin-top: 80px;
+        text-align: center;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+

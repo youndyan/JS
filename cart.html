@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>购物车</title>
+    <link rel="stylesheet" href="css/cart.css" />
+  </head>
+  <body>
+    <div class="header">
+      <img src="img/loginLogo.png" alt="" />
+      <p><span class="iconfont">&#xe63f;</span> 购物车</p>
+    </div>
+
+    <div class="wupin">
+      <div class="box">
+        <span><input type="checkbox" class="Check" name="" id="" /> 商品</span>
+        <span>单价</span>
+        <span>总价</span>
+        <span>添加/减少</span>
+        <span>删除</span>
+      </div>
+      <ul>
+        <!-- <li>
+          <div>
+            <img src="img/1_220 (2).png" alt="" />
+            <p>42°天佑德17版海拔2800红盒500ml</p>
+          </div>
+          <div>1500</div>
+          <div>1500</div>
+          <div>
+            <input class="jian btn" value="-" type="button" />
+            <span class="txt">0</span>
+            <input class="jia btn" value="+" type="button" />
+          </div>
+          <div><input type="button" value="删除" /></div>
+        </li> -->
+      </ul>
+      <p>总价</p>
+    </div>
+    <script src="js/jquery.js"></script>
+    <script src="js/cookie.js"></script>
+    <script>
+      //取到当前账号的uid
+      let uid = getCookie("uid");
+      console.log(uid);
+
+      //获取购物车商品数据
+      // function arr() {
+      $.get("http://jx.xuzhixiang.top/ap/api/cart-list.php", {
+        id: uid,
+      }).then((res) => {
+        console.log(res);
+        let obc = res.data;
+        let str = "";
+        let pid = obc.pid;
+        for (let itme in obc) {
+          str += `
+          <li class="list">
+          <div>
+             <input type="checkbox" class="check" name="" id="">
+            <img src="${obc[itme].pimg}" alt="" />
+            <p>${obc[itme].pname}</p>
+          </div>
+          <div>${obc[itme].pprice}</div>
+          <div>${obc[itme].pprice * obc[itme].pnum}</div>
+          <div>
+            <input class="jian btn" id="${
+              obc[itme].pid
+            }" value="-" type="button" />
+            <span class="txt">${obc[itme].pnum}</span>
+            <input class="jia btn" id="${
+              obc[itme].pid
+            }" value="+" type="button" />
+          </div>
+          <div><input type="button" id="${
+            obc[itme].pid
+          }" class="Btn" value="删除" /></div>
+        </li>
+        `;
+        }
+
+        $("ul").html(str);
+
+        /*  let list = $(".list");
+          if (list) {
+          } else {
+            $("ul").html("快去添加商品吧");
+          } */
+
+        //复选框
+        $(".Check").click(function () {
+          if ($(".Check").prop("checked")) {
+            $(".check").prop("checked", true);
+          } else {
+            $(".check").prop("checked", false);
+          }
+        });
+        $(".check").click(function () {
+          let all = $(".check").length;
+          if ($(this).prop("checked")) {
+            let a = $(".check:checked").length;
+            if (all == a) {
+              $(".Check").prop("checked", true);
+            }
+          } else {
+            $(".Check").prop("checked", false);
+          }
+        });
+        //删除
+        $(".Btn").click(function () {
+          $.get("http://jx.xuzhixiang.top/ap/api/cart-delete.php", {
+            uid: uid,
+            pid: this.id,
+          });
+          $(this).parent().parent().remove();
+        });
+
+        //增删按钮
+        $(".jian").click(function () {
+          let a = $(this).siblings(".txt").text();
+          a--;
+          console.log(a);
+
+          if (a < 1) {
+            alert("商品不能为零");
+            return;
+          }
+          $(this).siblings(".txt").text(a);
+          $.get("http://jx.xuzhixiang.top/ap/api/cart-update-num.php", {
+            uid: uid,
+            pid: this.id,
+            pnum: a,
+          });
+        });
+
+        $(".jia").click(function () {
+          let a = $(this).siblings(".txt").text();
+          a++;
+          console.log(a);
+          $(this).siblings(".txt").text(a);
+          $.get("http://jx.xuzhixiang.top/ap/api/cart-update-num.php", {
+            uid: uid,
+            pid: this.id,
+            pnum: a,
+          });
+        });
+      });
+      // }
+      // arr();
+    </script>
+  </body>
+</html>

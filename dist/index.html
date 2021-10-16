@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>中酒网</title>
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/swiper.css" />
+    <script src="js/jquery.js"></script>
+    <script src="js/swiper.js"></script>
+    <script src="js/cookie.js"></script>
+  </head>
+  <body>
+    <div class="top">
+      <div class="warp cl">
+        <span class="top-link">
+          您好，欢迎来到 <em class="s-name">中酒网！</em>
+          <a href="">去首页</a>
+        </span>
+        <ul class="login-regin">
+          <li class="L-line"><a href="login.html">请登录</a></li>
+          <li><a href="Register.html">免费注册</a></li>
+        </ul>
+
+        <ul class="quick_list">
+          <li class="sitemap dropdown">
+            <a href="">我的中酒网<span class="iconfont">&#xe65c;</span></a>
+
+            <div class="dropdown-menu">
+              <ol>
+                <li><a href="">已买到的商品</a></li>
+                <li><a href="">我关注的商品</a></li>
+                <li><a href="">我关注的店铺</a></li>
+              </ol>
+            </div>
+          </li>
+          <li>
+            <em class="shopping-cart"></em
+            ><a target="_blank" href=""
+              >购物车<em><span id="shopping-amount">0</span></em
+              >件</a
+            >
+          </li>
+          <li class="moblie-qrcode dropdown">
+            <a href="">微信端</a>
+            <div class="dropdown-menu">
+              <img
+                src="https://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/Site/qrCode.png"
+                width="90"
+                height="90"
+              />
+              <h3>扫描二维码</h3>
+              <p>在微信端查看</p>
+            </div>
+          </li>
+          <li class="app-qrcode dropdown">
+            <a href="">APP</a>
+            <div class="dropdown-menu">
+              <img
+                width="90"
+                height="90"
+                src="http://img6.zhongjiu.cn/ResourceB2B2C/App/mob.jpg"
+              />
+              <h3>扫描二维码</h3>
+              <p>下载手机客户端</p>
+            </div>
+          </li>
+          <li class="service">
+            <a href="/selleradmin">卖家中心</a>
+          </li>
+
+          <li class="customservice dropdown">
+            <a href="">客户服务<span class="iconfont">&#xe65c;</span></a>
+
+            <div class="dropdown-menu">
+              <div>
+                <div class="item-business">商户</div>
+                <div class="item">
+                  <a href="">平台准则</a>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="service">
+            <a href="">订购热线：400-798-9999</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <div class="header">
+      <div class="kongbai"></div>
+      <div class="logo">
+        <img
+          src="https://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/Site/logo.png"
+          alt="Himall"
+        />
+      </div>
+
+      <div class="header-left">
+        <img src="http://img5.zhongjiu.cn/pro/dt/gif.gif" />
+      </div>
+      <div class="header-sousuo">
+        <div id="sousuo-border">
+          <div class="sousuo-ul">
+            <ul>
+              <li>商品</li>
+              <li>店铺</li>
+            </ul>
+          </div>
+          <input class="text" type="text" placeholder="天佑德" />
+          <ul class="ssjg"></ul>
+          <input class="dianji" type="button" / value="搜索">
+          <p>
+            <a href="">西风</a>
+            <a href="">青稞酒</a>
+            <a href="">洋酒</a>
+            <a href="">习酒</a>
+            <a href="">小糊涂仙</a>
+            <a href="">酒鬼酒</a>
+            <a href="">张裕</a>
+            <a href="">拉菲</a>
+            <a href="">董酒</a>
+            <a href="">华夏长城</a>
+          </p>
+        </div>
+      </div>
+      <div class="header-right">
+        <img
+          src="https://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/ImageAd/201802011650389711990.jpg"
+          width="160"
+          height="80"
+        />
+      </div>
+    </div>
+
+    <!-- 右导航栏 -->
+    <div id="right">
+      <span
+        class="tuichu"
+        style="
+          position: absolute;
+          top: 0;
+          display: block;
+          width: 40px;
+          text-align: center;
+        "
+        >退出登录</span
+      >
+      <ul>
+        <li class="tx"><span class="iconfont">&#xe659;</span></li>
+        <li class="denglu">
+          <span class="iconfont">&#xe63f;</span>
+          <p>购</p>
+          <p>物</p>
+          <p>车</p>
+          <span class="sl">0</span>
+        </li>
+        <li><span class="iconfont">&#xe657;</span></li>
+        <li><span class="iconfont">&#xe643;</span></li>
+        <li><span class="iconfont">&#xe64d;</span></li>
+      </ul>
+    </div>
+
+    <!-- Swiper -->
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="img/201802091458155366980.jpg" alt="" />
+        </div>
+        <div class="swiper-slide">
+          <img src="img/202003111031067875650.jpg" alt="" />
+        </div>
+        <div class="swiper-slide">
+          <img src="img/202003111044441601700.jpg" alt="" />
+        </div>
+        <div class="swiper-slide">
+          <img src="img/201802091503150728240.jpg" alt="" />
+        </div>
+        <div class="swiper-slide">
+          <img src="img/202003111050028769200.jpg" alt="" />
+        </div>
+      </div>
+      <!-- Add Pagination -->
+      <div class="swiper-pagination"></div>
+    </div>
+
+    <div id="swiper-up">
+      <ul>
+        <li><span class="iconfont">&#xe655;</span> 全部商品分类</li>
+        <li class="huaguo" id="5">
+          <p><span class="iconfont">&#xe685;</span>白酒</p>
+          <div><span>茅台</span> <span>五粮液</span> <span>天佑德</span></div>
+        </li>
+        <li class="huaguo" id="4">
+          <p><span class="iconfont">&#xe685;</span>白酒</p>
+          <div><span>茅台</span> <span>五粮液</span> <span>天佑德</span></div>
+        </li>
+        <li class="huaguo" id="3">
+          <p><span class="iconfont">&#xe685;</span>白酒</p>
+          <div><span>茅台</span> <span>五粮液</span> <span>天佑德</span></div>
+        </li>
+        <li class="huaguo" id="2">
+          <p><span class="iconfont">&#xe685;</span>白酒</p>
+          <div><span>茅台</span> <span>五粮液</span> <span>天佑德</span></div>
+        </li>
+        <li class="huaguo" id="1">
+          <p><span class="iconfont">&#xe685;</span>白酒</p>
+          <div><span>茅台</span> <span>五粮液</span> <span>天佑德</span></div>
+        </li>
+        <li class="huaguo" id="0">
+          <p><span class="iconfont">&#xe685;</span>白酒</p>
+          <div><span>茅台</span> <span>五粮液</span> <span>天佑德</span></div>
+        </li>
+      </ul>
+      <div class="list"></div>
+      <span class="sy">首页</span>
+      <div class="rightimg">
+        <div>
+          <img class="animint" src="img/201708221047305409910.jpg" alt="" />
+        </div>
+        <div>
+          <img class="animint" src="img/201709121117114935610.jpg" alt="" />
+        </div>
+      </div>
+    </div>
+
+    <!-- 热销爆款 -->
+    <div class="connit">
+      <div class="connit-top">
+        <span>热销爆款</span>
+        <span>更多>></span>
+      </div>
+      <div class="connit-ul">
+        <ul class="Ul">
+          <!-- <li>
+            <img class="animint" src="img/1_220.png" alt="" />
+            <p>42°天佑德17版海拔2800红盒</p>
+            <span>￥1000.00</span>
+          </li>
+          <li>
+            <img class="animint" src="img/1_220 (1).png" alt="" />
+            <p>53°茅台酒股份公司王子酒500ml</p>
+            <span>￥2000.00</span>
+          </li>
+          <li>
+            <img class="animint" src="img/1_220 (2).png" alt="" />
+            <p>53°习酒窖藏1988雅致版500ml</p>
+            <span>￥3000.00</span>
+          </li>
+          <li>
+            <img class="animint" src="img/1_220 (3).png" alt="" />
+            <p>42度天佑德青稞酒小黑125ml×4</p>
+            <span>￥4000.00</span>
+          </li>
+          <li>
+            <img class="animint" src="img/1_220 (4).png" alt="" />
+            <p>53°重沙经典酒500ml</p>
+            <span>￥5000.00</span>
+          </li>
+          <li>
+            <img class="animint" src="img/1_220 (1).png" alt="" />
+            <p>53°重沙经典酒500ml</p>
+            <span>￥6000.00</span>
+          </li>
+          <li>
+            <img class="animint" src="img/1_220 (2).png" alt="" />
+            <p>52°剑南春500ml</p>
+            <span>￥7000.00</span>
+          </li>
+          <li>
+            <img class="animint" src="img/1_220 (4).png" alt="" />
+            <p>53°赖茅传承蓝500ml</p>
+            <span>￥8000.00</span>
+          </li>
+          <li>
+            <img class="animint" src="img/1_220 (2).png" alt="" />
+            <p>53°红旗十九酒500ml</p>
+            <span>￥9000.00</span>
+          </li>
+          <li>
+            <div class="animint"><img src="img/1_220.png" alt="" /></div>
+            <p>54°董酒佰草香500ML</p>
+            <span>￥10000.00</span>
+          </li> -->
+        </ul>
+      </div>
+    </div>
+
+    <!-- 帮您选酒 -->
+    <div class="bnxj">
+      <div class="bnxj-top">
+        <div><span></span>帮您选酒</div>
+        <ul>
+          <li>Hot！热卖</li>
+          <li>必备口粮</li>
+          <li>必送佳品</li>
+          <li>大型宴请</li>
+          <li>更多>></li>
+        </ul>
+      </div>
+      <div class="bnxj-foot">
+        <div class="foot-left">
+          <ul>
+            <li>贵州</li>
+            <li>四川</li>
+            <li>北京</li>
+            <li>青海</li>
+            <li>酱香型</li>
+            <li>浓香型</li>
+            <li>清香型</li>
+            <li>绵柔型</li>
+          </ul>
+          <div class="swiper-container1">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="img/logo_324.jpg" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/logo_325.jpg" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/logo_326.jpg" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/logo_453.jpg" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/logo_590.jpg" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/logo_594.jpg" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/logo_697.jpg" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/logo_752.jpg" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/logo_838.jpg" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/logo_453.jpg" alt="" />
+              </div>
+            </div>
+            <!-- Add Pagination -->
+            <!-- <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div> -->
+          </div>
+        </div>
+        <div class="foot-right">
+          <div>
+            <img src="img/floor_RTwo_20180410104724982806.jpg" alt="" />
+          </div>
+          <div>
+            <img src="img/floor_RFive_20200831153759423140.png" alt="" />
+            <img src="img/floor_RFour_20170823170519652778.jpg" alt="" />
+            <img src="img/floor_RSix_20170823170519668378.jpg" alt="" />
+            <img src="img/floor_RThree_20170823170519637178.jpg" alt="" />
+          </div>
+        </div>
+        <div class="bnxj-fooer">
+          <img src="img/floor_RSeven_20170823170519683978.jpg" alt="" />
+          <img src="img/floor_REight_20170823170519683978.jpg" alt="" />
+          <img src="img/floor_ScrollOne_20180123153232148329.jpg" alt="" />
+          <img src="img/floor_ScrollTwo_20170823170519699578.jpg" alt="" />
+        </div>
+      </div>
+    </div>
+
+    <!-- 白酒馆 -->
+    <div class="bjg">
+      <div class="bnxj-top">
+        <div><span></span>帮您选酒</div>
+        <ul>
+          <li>Hot！热卖</li>
+          <li>必备口粮</li>
+          <li>必送佳品</li>
+          <li>大型宴请</li>
+          <li>更多>></li>
+        </ul>
+      </div>
+      <div class="bnxj-foot">
+        <div class="foot-left">
+          <ul>
+            <li>贵州</li>
+            <li>四川</li>
+            <li>北京</li>
+            <li>青海</li>
+            <li>酱香型</li>
+            <li>浓香型</li>
+            <li>清香型</li>
+            <li>绵柔型</li>
+          </ul>
+          <div class="swiper-container1">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="img/logo_324.jpg" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/logo_325.jpg" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/logo_326.jpg" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/logo_453.jpg" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/logo_590.jpg" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/logo_594.jpg" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/logo_697.jpg" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/logo_752.jpg" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/logo_838.jpg" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/logo_453.jpg" alt="" />
+              </div>
+            </div>
+            <!-- Add Pagination -->
+            <!-- <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div> -->
+          </div>
+        </div>
+        <div class="foot-right">
+          <div>
+            <img src="img/floor_RTwo_20180410104724982806.jpg" alt="" />
+          </div>
+          <div>
+            <img src="img/floor_RFive_20200831153759423140.png" alt="" />
+            <img src="img/floor_RFour_20170823170519652778.jpg" alt="" />
+            <img src="img/floor_RSix_20170823170519668378.jpg" alt="" />
+            <img src="img/floor_RThree_20170823170519637178.jpg" alt="" />
+          </div>
+        </div>
+        <div class="bnxj-fooer">
+          <img src="img/floor_RSeven_20170823170519683978.jpg" alt="" />
+          <img src="img/floor_REight_20170823170519683978.jpg" alt="" />
+          <img src="img/floor_ScrollOne_20180123153232148329.jpg" alt="" />
+          <img src="img/floor_ScrollTwo_20170823170519699578.jpg" alt="" />
+        </div>
+      </div>
+    </div>
+
+    <!-- 品牌旗舰店 -->
+
+    <div class="ppqjd">
+      <span>品牌旗舰店</span>
+      <div class="ppqjd-box">
+        <div class="left">
+          <img src="img/201708221138345961900.jpg" alt="" />
+        </div>
+        <div class="conter">
+          <div class="swiper-container2">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="img/logo_1002.jpg" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/logo_1002.jpg" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/logo_1002.jpg" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/logo_1002.jpg" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/logo_1002.jpg" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/logo_1002.jpg" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/logo_1002.jpg" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/logo_1002.jpg" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/logo_1002.jpg" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/logo_1002.jpg" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/logo_1002.jpg" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/logo_1002.jpg" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/logo_323.jpg" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/logo_323.jpg" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/logo_323.jpg" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/logo_323.jpg" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/logo_323.jpg" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/logo_323.jpg" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/logo_323.jpg" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/logo_323.jpg" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/logo_323.jpg" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/logo_323.jpg" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/logo_323.jpg" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/logo_323.jpg" alt="" />
+              </div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+        </div>
+        <div class="right">
+          <img src="img/201609211049495626910.jpg" alt="" />
+        </div>
+      </div>
+    </div>
+    <!-- 正品保障 -->
+    <div class="zpbz">
+      <ul>
+        <span class="iconfont">&#xe685;</span>
+        <li>
+          <h4>正品保障</h4>
+          <p>厂家直接 正品防伪</p>
+        </li>
+        <span class="iconfont">&#xe685;</span>
+        <li>
+          <h4>正品保障</h4>
+          <p>厂家直接 正品防伪</p>
+        </li>
+        <span class="iconfont">&#xe685;</span>
+        <li>
+          <h4>正品保障</h4>
+          <p>厂家直接 正品防伪</p>
+        </li>
+        <span class="iconfont">&#xe685;</span>
+        <li>
+          <h4>正品保障</h4>
+          <p>厂家直接 正品防伪</p>
+        </li>
+        <span class="iconfont">&#xe685;</span>
+        <li>
+          <h4>正品保障</h4>
+          <p>厂家直接 正品防伪</p>
+        </li>
+        <span class="iconfont">&#xe685;</span>
+        <li>
+          <h4>正品保障</h4>
+          <p>厂家直接 正品防伪</p>
+        </li>
+      </ul>
+    </div>
+
+    <div class="foot">
+      <div class="left">
+        <img src="img/zj2.png" alt="" /><br />
+        <img src="img/ls.png" alt="" />
+      </div>
+      <div class="center">
+        <ul>
+          购物指南
+          <li>购物指南</li>
+          <li>购物流程</li>
+          <li>会员积分</li>
+          <li>关于发票</li>
+          <li>关于优惠券</li>
+          <li>开票说明</li>
+        </ul>
+        <ul>
+          购物指南
+          <li>购物指南</li>
+          <li>购物流程</li>
+          <li>会员积分</li>
+          <li>关于发票</li>
+          <li>关于优惠券</li>
+          <li>开票说明</li>
+        </ul>
+        <ul>
+          购物指南
+          <li>购物指南</li>
+          <li>购物流程</li>
+          <li>会员积分</li>
+          <li>关于发票</li>
+          <li>关于优惠券</li>
+          <li>开票说明</li>
+        </ul>
+        <ul>
+          购物指南
+          <li>购物指南</li>
+          <li>购物流程</li>
+          <li>会员积分</li>
+          <li>关于发票</li>
+          <li>关于优惠券</li>
+          <li>开票说明</li>
+        </ul>
+        <ul>
+          购物指南
+          <li>购物指南</li>
+          <li>购物流程</li>
+          <li>会员积分</li>
+          <li>关于发票</li>
+          <li>关于优惠券</li>
+          <li>开票说明</li>
+        </ul>
+        <ul>
+          购物指南
+          <li>购物指南</li>
+          <li>购物流程</li>
+          <li>会员积分</li>
+          <li>关于发票</li>
+          <li>关于优惠券</li>
+          <li>开票说明</li>
+        </ul>
+      </div>
+      <div class="right">
+        <div>
+          <h4>中酒微信</h4>
+          <img
+            src="https://img6.zhongjiu.cn/resourceb2b2c/Storage/Plat/Site/qrCode.png"
+            width="90"
+            height="90"
+          />
+          <p>中酒官方微信</p>
+        </div>
+        <div>
+          <h4>手机中酒</h4>
+          <img
+            width="90"
+            height="90"
+            src="http://img6.zhongjiu.cn/ResourceB2B2C/App/mob.jpg"
+          />
+          <p>下载移动客户端</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div>
+        <ul>
+          <li>关于中酒</li>
+          <li>媒体报道</li>
+          <li>商务合作</li>
+          <li>加入中酒</li>
+          <li>商家加盟</li>
+          <li>联系我们</li>
+        </ul>
+      </div>
+    </div>
+    <script>
+      var swiper = new Swiper(".swiper-container", {
+        loop: true,
+        autoplay: true,
+        effect: "fade",
+        pagination: {
+          el: ".swiper-pagination",
+        },
+      });
+
+      var swiper = new Swiper(".swiper-container1", {
+        slidesPerView: 2,
+        slidesPerColumn: 2,
+        autoplay: true,
+        spaceBetween: 25,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+      var swiper = new Swiper(".swiper-container2", {
+        slidesPerView: 4,
+        slidesPerColumn: 3,
+        spaceBetween: 1,
+        pagination: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+
+      $(".animint").hover(
+        function () {
+          $(this).stop().animate({ left: "-5px" }, 200);
+        },
+        function () {
+          $(this).stop().animate({ left: 0 }, 200);
+        }
+      );
+
+      //在当前账号下，传商品
+      /*  $.post("http://jx.xuzhixiang.top/ap/api/goods/goods-add.php", {
+        pname: "了",
+
+        uid: "99999",
+      }).then((res) => {
+        console.log(res);
+      }); */
+
+      //获取商品数据
+      $.get("http://jx.xuzhixiang.top/ap/api/productlist.php", {
+        pagesize: 10,
+        uid: 6666,
+      }).then((res) => {
+        let obc = res.data;
+        let str = "";
+        for (let itme in obc) {
+          /* <li>
+           <a href="商品详情.html?id=${itme}"><img class="animint" src="${res.data[itme].pimg}" alt="" /></a>
+            <p>${res.data[itme].pname}</p>
+            <span>￥${res.data[itme].pprice}</span>
+          </li> */
+          str += `
+          <li>
+           <a href="productdetail.html?id=${obc[itme].pid}"><img class="animint" src="${obc[itme].pimg}" alt="" /></a>
+            <p>${obc[itme].pname}</p>
+            <span>￥${obc[itme].pprice}</span>
+          </li>
+        `;
+        }
+        $(".Ul").html(str);
+      });
+
+      //取到当前账号的uid
+      let uid = getCookie("uid");
+      let tx = getCookie("tx");
+      console.log(uid);
+      console.log(tx);
+
+      //提示是否登录
+      $(".denglu").click(function () {
+        if (uid) {
+          location.href = "cart.html";
+        } else {
+          alert("你还未登录，快去登录吧");
+        }
+      });
+
+      if (tx) {
+        $(".tx").html(tx);
+      }
+
+      //退出登录
+
+      $(".tuichu").click(function () {
+        removeCookie("uid");
+        removeCookie("tx");
+
+        alert("你已退出登录");
+        window.location.reload();
+      });
+
+      //小红点
+      $.get("http://jx.xuzhixiang.top/ap/api/cart-list.php", {
+        id: uid,
+      }).then((res) => {
+        console.log(res);
+        let str = 0;
+        for (let i in res.data) {
+          str += Number(res.data[i].pnum);
+        }
+        $(".sl").html(str);
+        if (uid) {
+        } else {
+          $(".sl").html(0);
+        }
+      });
+
+      //列表划过
+      $(".huaguo").hover(
+        function () {
+          $(".list").stop().fadeIn("200");
+          //获取商品数据
+          $.get("http://jx.xuzhixiang.top/ap/api/productlist.php", {
+            uid: "99999",
+          }).then((res) => {
+            $(".list").html(res.data[this.id].pname);
+          });
+        },
+        function () {
+          $(".list").stop().fadeOut("200");
+        }
+      );
+
+      //搜索
+      /*  $(".text").blur(function () {
+        let oScript = document.createElement("script");
+        oScript.src =
+          "https://www.baidu.com/sugrec?pre=1&p=3&ie=utf-8&json=1&prod=pc&from=pc_web&wd=" +
+          $(".text").val() +
+          "&req=2&cb=foo&_=1620975473313";
+        document.body.appendChild(oScript);
+      });
+      function foo(data) {
+        if (data.g) {
+          data = data.g;
+          let str = "";
+          data.forEach((item) => {
+            str += `<li><a href="https://www.baidu.com/s?ie=utf-8&f=3&rsv_bp=1&rsv_idx=2&tn=baiduhome_pg&wd=${item.q}">${item.q}</a></li>`;
+          });
+          $(".ssjg").html(str);
+        }
+      } */
+    </script>
+  </body>
+</html>
